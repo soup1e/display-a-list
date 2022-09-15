@@ -1,8 +1,15 @@
-// import functions and grab DOM elements
+import { foods } from './data-foods.js';
+import { renderFood } from './render-foods.js';
 
-// initialize global state
+const foodList = document.getElementById('foods-list');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+function displayFoods() {
+    foodList.innerHTML = '';
+
+    for (let food of foods) {
+        const foodEl = renderFood(food);
+        foodList.append(foodEl);
+    }
+}
+
+displayFoods();
